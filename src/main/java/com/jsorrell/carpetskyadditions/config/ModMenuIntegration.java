@@ -37,7 +37,7 @@ public class ModMenuIntegration implements ModMenuApi {
 
             newWorldCategory.addEntry(entryBuilder
                 .startBooleanToggle(
-                    Component.literal("Use Original Skyblock Island"),
+                    Component.translatable("carpetskyadditions.config.option.useOriginalSkyBlockIsland"),
                     config.originalIsland)
                 .setDefaultValue(false)
                 .setSaveConsumer(newValue -> config.originalIsland = newValue)

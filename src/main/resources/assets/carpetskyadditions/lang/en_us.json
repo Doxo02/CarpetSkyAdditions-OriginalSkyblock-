@@ -8,6 +8,7 @@
   "carpetskyadditions.config.option.initialTreeType": "The initial tree type that is selected by default",
   "carpetskyadditions.config.option.initialTreeType.tooltip": "Only used when datapack is enabled by default",
   "carpetskyadditions.config.option.autoEnableDefaultSettings": "Automatically enable default settings when first loading a SkyBlock world",
+  "carpetskyadditions.config.option.useOriginalSkyBlockIsland": "Use Original Skyblock Island",
   "datapack.carpetskyadditions.skyblock": "Carpet Sky Additions: SkyBlock",
   "datapack.carpetskyadditions.acacia": "Carpet Sky Additions: Acacia",
   "carpetskyadditions.tree.oak": "Oak",
