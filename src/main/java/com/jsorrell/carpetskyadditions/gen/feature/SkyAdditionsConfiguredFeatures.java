@@ -7,6 +7,8 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 public abstract class SkyAdditionsConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPAWN_PLATFORM = feature("spawn_platform");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORIGINAL_SPAWN_PLATFORM = feature("original_spawn_platform");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SAND_ISLAND = feature("sand_island");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SKY_ISLAND = feature("sky_island");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GATEWAY_ISLAND = feature("end_gateway_island");
 

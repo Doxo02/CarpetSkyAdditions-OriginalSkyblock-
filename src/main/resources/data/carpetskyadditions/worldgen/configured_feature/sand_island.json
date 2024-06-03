@@ -1,0 +1,14 @@
+{
+  "type": "carpetskyadditions:sand_island",
+  "config": {
+    "platform": {
+      "structure": "carpetskyadditions:sand_island",
+      "pos": [
+        70,
+        62,
+        -1
+      ]
+    },
+    "spawn_relative": true
+  }
+}

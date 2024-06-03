@@ -31,6 +31,7 @@ public class SkyAdditionsConfig implements ConfigData {
     public boolean enableDatapackByDefault = false;
     public String initialTreeType = InitialTreeType.OAK.toString();
     public boolean autoEnableDefaultSettings = true;
+    public boolean originalIsland = false;
 
     private InitialTreeType parseInitialTreeType() throws ValidationException {
         switch (initialTreeType.toLowerCase()) {

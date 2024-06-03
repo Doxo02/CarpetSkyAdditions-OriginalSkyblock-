@@ -110,7 +110,20 @@ public abstract class MinecraftServerMixin {
                 .getHolderOrThrow(SkyAdditionsConfiguredFeatures.SPAWN_PLATFORM);
 
         if (!spawnPlatformFeature.value().place(level, chunkGenerator, random, worldSpawn)) {
-            SkyAdditionsSettings.LOG.error("Couldn't generate spawn platform");
+            spawnPlatformFeature = level.registryAccess()
+                    .registryOrThrow(Registries.CONFIGURED_FEATURE)
+                    .getHolderOrThrow(SkyAdditionsConfiguredFeatures.ORIGINAL_SPAWN_PLATFORM);
+            if(!spawnPlatformFeature.value().place(level, chunkGenerator, random, worldSpawn)) {
+                SkyAdditionsSettings.LOG.error("Couldn't generate spawn platform");
+            }
+        }
+
+        Holder.Reference<ConfiguredFeature<?, ?>> sandPlatformFeature = level.registryAccess()
+                .registryOrThrow(Registries.CONFIGURED_FEATURE)
+                .getHolderOrThrow(SkyAdditionsConfiguredFeatures.SAND_ISLAND);
+
+        if(!sandPlatformFeature.value().place(level, chunkGenerator, random, worldSpawn)) {
+            SkyAdditionsSettings.LOG.error("Couldn't generate sand platform");
         }
 
         ci.cancel();

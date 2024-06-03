@@ -7,21 +7,21 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
-public class SpawnPlatformFeature extends Feature<SpawnPlatformFeatureConfiguration> {
-    public SpawnPlatformFeature(Codec<SpawnPlatformFeatureConfiguration> codec) {
+public class OriginalSpawnPlatformFeature extends Feature<OriginalSpawnPlatformFeatureConfiguration> {
+    public OriginalSpawnPlatformFeature(Codec<OriginalSpawnPlatformFeatureConfiguration> codec) {
         super(codec);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<SpawnPlatformFeatureConfiguration> context) {
+    public boolean place(FeaturePlaceContext<OriginalSpawnPlatformFeatureConfiguration> context) {
         SkyAdditionsConfig modConfig =
             AutoConfig.getConfigHolder(SkyAdditionsConfig.class).get();
 
-        SpawnPlatformFeatureConfiguration config = context.config();
+        OriginalSpawnPlatformFeatureConfiguration config = context.config();
         // Always absolute with Y
         BlockPos origin = config.spawnRelative() ? context.origin().atY(0) : BlockPos.ZERO;
 
-        if(!modConfig.originalIsland) {
+        if(modConfig.originalIsland) {
             return SkyAdditionsFeatures.LOCATABLE_STRUCTURE.place(
                 config.platformConfig(), context.level(), context.chunkGenerator(), context.random(), origin);
         } else {

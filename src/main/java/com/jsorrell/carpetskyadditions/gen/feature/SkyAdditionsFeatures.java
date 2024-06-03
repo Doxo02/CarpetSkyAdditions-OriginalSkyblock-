@@ -11,16 +11,24 @@ public abstract class SkyAdditionsFeatures {
             new LocatableStructureFeature(LocatableStructureFeatureConfiguration.CODEC);
     public static final Feature<SpawnPlatformFeatureConfiguration> SPAWN_PLATFORM =
             new SpawnPlatformFeature(SpawnPlatformFeatureConfiguration.CODEC);
+    public static final Feature<OriginalSpawnPlatformFeatureConfiguration> ORIGINAL_SPAWN_PLATFORM =
+            new OriginalSpawnPlatformFeature(OriginalSpawnPlatformFeatureConfiguration.CODEC);
+    public static final Feature<SandIslandFeatureConfiguration> SAND_ISLAND =
+            new SandIslandFeature(SandIslandFeatureConfiguration.CODEC);
     public static final Feature<NoneFeatureConfiguration> GATEWAY_ISLAND =
             new EndGatewayIslandFeature(NoneFeatureConfiguration.CODEC);
 
     public static void registerAll() {
         Registry.register(
-                BuiltInRegistries.FEATURE,
-                new SkyAdditionsResourceLocation("locatable_structure"),
-                LOCATABLE_STRUCTURE);
+            BuiltInRegistries.FEATURE,
+            new SkyAdditionsResourceLocation("locatable_structure"),
+            LOCATABLE_STRUCTURE);
         Registry.register(
-                BuiltInRegistries.FEATURE, new SkyAdditionsResourceLocation("spawn_platform"), SPAWN_PLATFORM);
+            BuiltInRegistries.FEATURE, new SkyAdditionsResourceLocation("original_spawn_platform"), ORIGINAL_SPAWN_PLATFORM);
+        Registry.register(
+            BuiltInRegistries.FEATURE, new SkyAdditionsResourceLocation("sand_island"), SAND_ISLAND);
+        Registry.register(
+            BuiltInRegistries.FEATURE, new SkyAdditionsResourceLocation("spawn_platform"), SPAWN_PLATFORM);
         Registry.register(
                 BuiltInRegistries.FEATURE, new SkyAdditionsResourceLocation("end_gateway_island"), GATEWAY_ISLAND);
     }
